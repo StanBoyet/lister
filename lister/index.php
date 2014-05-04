@@ -92,7 +92,9 @@ sort($dirArray);
 			</div>
 
 			<div class="footer">
-				<p>Made with <span class="glyphicon glyphicon-heart"></span> by StanBoyet</p>
+				<p>Made with <span class="glyphicon glyphicon-heart"></span> by StanBoyet.</p>
+				<p>Based on <a href="http://www.liamdelahunty.com/tips/php_list_a_directory.php"> this tutorial</a>, with <a href="http://stackoverflow.com/a/17708599">this script</a>, and from <a href="http://getbootstrap.com/examples/jumbotron-narrow/">this bootstrap template</a>.</p>
+				<p>Contribute <a href="https://github.com/StanBoyet/lister">here</a>.</p>
 			</div>
 
 		</div> <!-- /container -->
