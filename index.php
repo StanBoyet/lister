@@ -2,10 +2,12 @@
 
 // Open the directory 
 $directory = opendir(".");
+$totalSize = 0;
 
 // Get each entries
 while($entryName = readdir($directory)) {
 	$dirArray[] = $entryName;
+	$totalSize += filesize($entryName);
 }
 
 // Close the directory
@@ -55,7 +57,7 @@ sort($dirArray);
 
       		<div class="row">
 
-				<a href="zip_it.php" type="button" class="btn btn-primary pull-right">Download the list</a>
+				<a href="zip_it.php" type="button" class="btn btn-primary pull-right" <?php if($totalSize > 1048576000){ echo "disabled='disabled'"; } ?> >Download the list</a>
 				<br>
 				<br>
 
