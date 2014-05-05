@@ -9,7 +9,7 @@ while($entryName = readdir($directory)) {
 }
 
 // Close the directory
-closedir($myDirectory);
+closedir($directory);
 
 //	Count elements in the array
 $indexCount	= count($dirArray);
