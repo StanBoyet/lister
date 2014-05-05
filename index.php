@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-// Open the directory 
+// Open the directory
 $directory = opendir(".");
 $totalSize = 0;
 
@@ -42,52 +42,51 @@ sort($dirArray);
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-      <style type="text/css"></style></head>
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style type="text/css"></style></head>
 
-      <body>
+	<body>
 
-      	<div class="container">
-      		<div class="header">
-      			<h3 class="text-muted">The Lister - Directory Content</h3>
-      		</div>
+		<div class="container">
+			<div class="header">
+				<h3 class="text-muted">The Lister - Directory Content</h3>
+			</div>
 
-      		<div class="row">
+			<div class="row">
 
 				<a href="zip_it.php" type="button" class="btn btn-primary pull-right" <?php if($totalSize > 1048576000){ echo "disabled='disabled'"; } ?> >Download the list</a>
 				<br>
 				<br>
 
-      			<table class="table table-condensed table-striped table-bordered">
-      				<tr>
-      					<th>Filename</th>
-      					<th>Filetype</th>
-      					<th>Filesize</th>
-      				</tr>
+				<table class="table table-condensed table-striped table-bordered">
+					<tr>
+						<th>Filename</th>
+						<th>Filetype</th>
+						<th>Filesize</th>
+					</tr>
 
-      				<?php 
-      				for ($index=0; $index < $indexCount; $index++) { 
-					if (substr("$dirArray[$index]", 0, 1) != "." && filetype($dirArray[$index]) != "dir" && !strstr($dirArray[$index],'.php') ){ // Don't list hidden files or directories
+					<?php
+					for ($index=0; $index < $indexCount; $index++) {
+						if (substr("$dirArray[$index]", 0, 1) != "." && filetype($dirArray[$index]) != "dir" && !strstr($dirArray[$index],'.php') ){ // Don't list hidden files or directories
 					?>
 
 					<tr>
 						<td>
-							<?php echo '<a href="'.$dirArray[$index].'">'.$dirArray[$index].'</a>'?>
+							<?php echo "<a href=\"{$dirArray[$index]}\">{$dirArray[$index]}</a>"; ?>
 						</td>
 						<td>
-							<?php echo filetype($dirArray[$index])?>
+							<?php echo filetype($dirArray[$index]); ?>
 						</td>
 						<td>
-							<?php echo number_format (filesize($dirArray[$index]) / 1048576, (filesize($dirArray[$index]) < 1048576 ? 2 : 0)) . " Mb" ?>
+							<?php echo number_format (filesize($dirArray[$index]) / 1048576, (filesize($dirArray[$index]) < 1048576 ? 2 : 0)) . ' Mb'; ?>
 						</td>
 					</tr>
 
 					<?php
 						}
-
 					}
 					?>
 				</table>
