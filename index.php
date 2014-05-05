@@ -28,7 +28,7 @@ sort($dirArray);
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Narrow Jumbotron Template for Bootstrap</title>
+<title>The Lister - Directory Content</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -79,7 +79,7 @@ sort($dirArray);
 							<?php echo filetype($dirArray[$index])?>
 						</td>
 						<td>
-							<?php echo filesize($dirArray[$index])?>
+							<?php echo number_format (filesize($dirArray[$index]) / 1048576, (filesize($currentfile) < 1048576 ? 2 : 0)) . "mb" ?>
 						</td>
 					</tr>
 
