@@ -79,7 +79,7 @@ sort($dirArray);
 							<?php echo filetype($dirArray[$index])?>
 						</td>
 						<td>
-							<?php echo number_format (filesize($dirArray[$index]) / 1048576, (filesize($currentfile) < 1048576 ? 2 : 0)) . "mb" ?>
+							<?php echo number_format (filesize($dirArray[$index]) / 1048576, (filesize($dirArray[$index]) < 1048576 ? 2 : 0)) . " Mb" ?>
 						</td>
 					</tr>
 
